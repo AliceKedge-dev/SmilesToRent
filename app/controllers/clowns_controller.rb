@@ -32,4 +32,10 @@ class ClownsController < ApplicationController
   def destroy
     authorize @clown
   end
+
+  private
+
+  def article_params
+    params.require(:clown).permit(:username, :email, :photo, :personnal_info)
+  end
 end
