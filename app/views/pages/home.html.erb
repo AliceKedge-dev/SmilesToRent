@@ -13,15 +13,15 @@
 
 <ol>
   <% @clowns.each do |clown| %>
-  <br>
-<%= clown.username %>
-<%= clown.category %>
-<br>
-<%= clown.localisation %>
-<br>
-<p><%= clown.price %>/h</p>
-<br>
-<%= link_to "See clown info", clown_path %>
-<br>
+    <br>
+    <%= clown.username %>
+    <%= clown.category %>
+    <br>
+    <%= clown.localisation %>
+    <br>
+    <p><%= clown.price %>/h</p>
+    <br>
+    <%= link_to "See clown info", clown_path(clown) %>
+    <br>
   <% end %>
 </ol>
