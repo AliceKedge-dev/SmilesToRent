@@ -1,5 +1,4 @@
 class ClownsController < ApplicationController
-
   def index
     @clowns = policy_scope(Clown)
   end
@@ -36,6 +35,6 @@ class ClownsController < ApplicationController
   private
 
   def article_params
-    params.require(:clown).permit(:username, :email, :photo, :personnal_info)
+    params.require(:clown).permit(:username, :email, :photo, :personnal_info, :password)
   end
 end

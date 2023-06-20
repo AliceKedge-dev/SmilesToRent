@@ -72,6 +72,7 @@
   <% @clowns.each do |clown| %>
     <%= content_tag :div, class: 'card' do %>
       <%= link_to clown_path(clown), class: 'card-link' do %>
+      <%= cl_image_tag clown.photo.key, height: 200, width: 250, crop: :fill %>
         <%= content_tag :div, class: 'card-content' do %>
           <h2 class="card-title"><%= clown.username %></h2>
           <p class="card-info"><%= clown.category %></p>
