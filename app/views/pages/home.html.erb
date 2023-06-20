@@ -1,6 +1,27 @@
+<div class = "navbar">
+<%= image_tag "SmilesForRent.png", class: "clown_logo" %>
 <h1>SmilesForRent</h1>
+</div>
+
 <p>The website to rent a clown for your event !</p>
+
+
 <br>
 <br>
 <br>
-<h3>Clown du moment</h3>
+<h3>Clowns du moment</h3>
+
+<ol>
+  <% @clowns.each do |clown| %>
+  <br>
+<%= clown.username %>
+<%= clown.category %>
+<br>
+<%= clown.localisation %>
+<br>
+<p><%= clown.price %>/h</p>
+<br>
+<%= link_to "See clown info", clown_path %>
+<br>
+  <% end %>
+</ol>
