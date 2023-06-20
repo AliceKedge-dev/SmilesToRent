@@ -16,41 +16,43 @@
 <br>
 <br>
 <br>
-
+<br>
+<br>
+<br>
 <br>
 <br>
 
 <div class = "category_clown">
 
 <div>
-<img src="" alt="">
+<%= image_tag "birthday.jpg" %>
 <h3>Anniversaire</h3>
 </div>
 
 <div>
-<img src="" alt="">
+<%= image_tag "conférence.jpg" %>
 <h3>Conférence</h3>
 </div>
 
 
 <div>
-<img src="" alt="">
+<%= image_tag "horreur.jpg" %>
 <h3>Horreur</h3>
 </div>
 
 
 <div>
-<img src="" alt="">
+<%= image_tag "hopital_clown.jpg" %>
 <h3>Hôpital</h3>
 </div>
 
 <div>
-<img src="" alt="">
+<%= image_tag "diner_clown.jpg" %>
 <h3>Dîner</h3>
 </div>
 
 <div>
-<img src="" alt="">
+<%= image_tag "wedding.jpg" %>
 <h3>Mariage</h3>
 </div>
 
@@ -60,15 +62,23 @@
 <br>
 <br>
 
-<h3>Clowns du moment</h3>
+<h2>Clowns du moment</h2>
 
-<% @clowns.each do |clown| %>
-  <%= link_to clown_path(clown), class: 'card-link' do %>
+<br>
+<br>
+<br>
+
+<div class="card-container">
+  <% @clowns.each do |clown| %>
     <%= content_tag :div, class: 'card' do %>
-      <%= content_tag :div, class: 'card-content' do %>
-        <h2 class="card-title"><%= clown.username %></h2>
-        <p class="card-info"><%= clown.category %></p>
-        <p class="card-info"><%= clown.localisation %></p>
-        <p class="card-info"><%= clown.price %>€/h</p>
+      <%= link_to clown_path(clown), class: 'card-link' do %>
+        <%= content_tag :div, class: 'card-content' do %>
+          <h2 class="card-title"><%= clown.username %></h2>
+          <p class="card-info"><%= clown.category %></p>
+          <p class="card-info"><%= clown.localisation %></p>
+          <p class="card-info"><%= clown.price %>€/h</p>
+        <% end %>
       <% end %>
     <% end %>
+  <% end %>
+</div>
