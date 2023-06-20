@@ -14,7 +14,7 @@
 </div>
 
 <h2><%= @clown.username %></h2>
-<img src="https://img.static-rmg.be/a/view/q75/w1200/h627/3715078/3544769-jpg.jpg" alt="photo melissandre">
+<%= cl_image_tag clown.photo.key, height: 200, width: 250, crop: :fill %>
 
 <p>Melissandre, le clown qui illumine ce mariage de sa présence, est une artiste exceptionnelle au charme envoûtant.
 Affublée d'un costume coloré et étincelant, elle incarne à merveille la magie et la joie de l'événement.
