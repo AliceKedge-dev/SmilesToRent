@@ -10,6 +10,9 @@ gem "devise"
 
 gem "pundit"
 
+gem "dotenv-rails", groups: [:development, :test]
+
+gem "cloudinary"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
