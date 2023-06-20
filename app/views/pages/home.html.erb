@@ -1,6 +1,11 @@
 <div class = "navbar">
 <%= image_tag "SmilesForRent.png", class: "clown_logo" %>
-<h1>SmilesForRent</h1>
+<h1 class ="smile-name">SmilesForRent</h1>
+<%# <%= form_tag search_path, method: :get, class: "search-form" do %>
+  <%# <%= text_field_tag :query, params[:query], placeholder: "Rechercher..." %>
+  <%# <%= submit_tag "Rechercher", class: "search-button" %> %>
+<%# <% end %>
+
 </div>
 
 <p>The website to rent a clown for your event !</p>
@@ -11,17 +16,17 @@
 <br>
 <h3>Clowns du moment</h3>
 
-<ol>
-  <% @clowns.each do |clown| %>
-  <br>
-<%= clown.username %>
-<%= clown.category %>
-<br>
-<%= clown.localisation %>
-<br>
-<p><%= clown.price %>/h</p>
-<br>
-<%= link_to "See clown info", clown_path %>
-<br>
+
+
+<% @clowns.each do |clown| %>
+  <%= link_to clown_path(clown), class: 'card-link' do %>
+    <%= content_tag :div, class: 'card' do %>
+      <%= content_tag :div, class: 'card-content' do %>
+        <h2 class="card-title"><%= clown.username %></h2>
+        <p class="card-info"><%= clown.category %></p>
+        <p class="card-info"><%= clown.localisation %></p>
+        <p class="card-info"><%= clown.price %>€/h</p>
+      <% end %>
+    <% end %>
   <% end %>
-</ol>
+<% end %>
