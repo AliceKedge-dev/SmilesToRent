@@ -1,22 +1,65 @@
 <div class = "navbar">
+
 <%= image_tag "SmilesForRent.png", class: "clown_logo" %>
-<h1 class ="smile-name">SmilesForRent</h1>
-<%# <%= form_tag search_path, method: :get, class: "search-form" do %>
-  <%# <%= text_field_tag :query, params[:query], placeholder: "Rechercher..." %>
-  <%# <%= submit_tag "Rechercher", class: "search-button" %> %>
-<%# <% end %>
+
+<h1 class ="smile_name">SmilesForRent</h1>
+
+<%= form_tag(search_path, method: :get, class: "search-form") do %>
+  <%= text_field_tag(:query, params[:query], placeholder: "Rechercher...") %>
+  <button type="submit" class="search-button">
+    <i class="fa-solid fa-magnifying-glass" style="color: #FFFFFF;"></i>
+  </button>
+<% end %>
 
 </div>
 
-<p>The website to rent a clown for your event !</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class = "category_clown">
+
+<div>
+<img src="" alt="">
+<h3>Anniversaire</h3>
+</div>
+
+<div>
+<img src="" alt="">
+<h3>Conférence</h3>
+</div>
 
 
+<div>
+<img src="" alt="">
+<h3>Horreur</h3>
+</div>
+
+
+<div>
+<img src="" alt="">
+<h3>Hôpital</h3>
+</div>
+
+<div>
+<img src="" alt="">
+<h3>Dîner</h3>
+</div>
+
+<div>
+<img src="" alt="">
+<h3>Mariage</h3>
+</div>
+
+</div>
+
 <br>
 <br>
 <br>
+
 <h3>Clowns du moment</h3>
-
-
 
 <% @clowns.each do |clown| %>
   <%= link_to clown_path(clown), class: 'card-link' do %>
