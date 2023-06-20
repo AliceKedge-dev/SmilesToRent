@@ -1,4 +1,4 @@
-class ClownController < ApplicationController
+class ClownsController < ApplicationController
 
   def index
     @clowns = policy_scope(Clown)
@@ -17,12 +17,14 @@ class ClownController < ApplicationController
   end
 
   def show
+    @clown = Clown.find(params["id"])
     authorize @clown
   end
 
   def edit
     authorize @clown
   end
+
   def update
     authorize @clown
   end
