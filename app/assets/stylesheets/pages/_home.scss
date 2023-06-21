@@ -96,6 +96,7 @@
   width: 42px;
   height: 42px;
   margin-right: 10px;
+  padding-left: -150px;
 }
 
 h2{
@@ -123,6 +124,10 @@ h2{
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   margin-bottom: 16px;
+}
+
+.category_clown :hover{
+  opacity: 50%;
 }
 
 .card-title {
