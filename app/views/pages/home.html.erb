@@ -62,7 +62,7 @@
 <br>
 <br>
 
-<h2>Clowns du moment</h2>
+<h2 class="home-h2">Clowns du moment</h2>
 
 <br>
 <br>
@@ -73,7 +73,9 @@
     <%= content_tag :div, class: 'card' do %>
       <%= link_to clown_path(clown), class: 'card-link' do %>
         <%= content_tag :div, class: 'card-content' do %>
-      <%= cl_image_tag clown.photo.key, height: 200, width: 250, crop: :fill %>
+        <% if clown.photo.attached? %>
+          <%= cl_image_tag clown.photo.key, height: 200, width: 250, crop: :fill %>
+        <% end %>
           <h2 class="card-title"><%= clown.username %></h2>
           <p class="card-info"><%= clown.category %></p>
           <p class="card-info"><%= clown.localisation %></p>
