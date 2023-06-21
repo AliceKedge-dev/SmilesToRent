@@ -12,8 +12,6 @@ User.destroy_all
 User.create(email: "email@email.com", password: "password")
 User.create(email: "user@email.com", password: "userpassword")
 
-puts "yo"
-
 file1 = URI.open("https://asset.cloudinary.com/dkx9xgzon/1d393eaf478154cec48eb581cbb9ed87")
 clown1 = Clown.new(username: "Melissandre", user: User.last, category: "clown de mariage", localisation: "Paris", price: "40€/h", personal_info: "Melissandre, le clown qui illumine
   ce mariage de sa présence,
@@ -61,5 +59,3 @@ clown3 = Clown.new(username: "Jean Pascal", user: User.last, category: "clown d'
   Et consequuntur consequatur sed nisi autem ea ducimus assumenda ab facilis nesciun.")
 clown3.photo.attach(io: file3, filename: "https://asset.cloudinary.com/dkx9xgzon/5dd76c876a059c0295fd491596f96c2a", content_type: "image/png")
 clown3.save
-
-puts "salam"
