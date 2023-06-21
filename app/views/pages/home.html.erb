@@ -17,10 +17,6 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
 
 <div class = "category_clown">
 
@@ -76,12 +72,19 @@
         <% if clown.photo.attached? %>
           <%= cl_image_tag clown.photo.key, height: 200, width: 250, crop: :fill %>
         <% end %>
+<div class="name-cate-loca-price">
+<div class="name-cate">
           <h2 class="card-title"><%= clown.username %></h2>
-          <p class="card-info"><%= clown.category %></p>
-          <p class="card-info"><%= clown.localisation %></p>
-          <p class="card-info"><%= clown.price %>€/h</p>
+          <p class="card-info card-cate"><%= clown.category %></p>
+</div>
+<div class="loca-price">
+          <p class="card-info card-loca"><%= clown.localisation %></p>
+          <p class="card-info card-price"><%= clown.price %>€/h</p>
+</div>
+</div>
         <% end %>
       <% end %>
     <% end %>
   <% end %>
+
 </div>
