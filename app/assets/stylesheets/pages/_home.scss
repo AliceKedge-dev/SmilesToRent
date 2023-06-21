@@ -1,5 +1,25 @@
 // Specific CSS for your home-page
 
-.clown_logo[
-  width : 
-]
+.category{
+  position: absolute;
+  width: 133px;
+  height: 133px;
+  left: 258px;
+  top: 164px;
+
+  background: url(l-association-semeurs-de-joie-a-fete-ses-dix-ans-en-2015-archives-photo-le-dl-1530303973.jpg);
+}
+
+h3{
+  position: absolute;
+  width: 83px;
+  height: 21px;
+  left: 282px;
+  top: 309px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #000000;
+}
