@@ -10,11 +10,31 @@
     <i class="fa-solid fa-magnifying-glass" style="color: #FFFFFF;"></i>
   </button>
 <% end %>
-
 </div>
 
-<h2><%= @clown.username %></h2>
-<p><%= @clown.personal_info %></p>
+<div class="container">
+  <h2 class="clown-show-title"><%= @clown.username %></h2>
+
+  <div class="show-clown-image-container">
+    <%= cl_image_tag @clown.photo.key %>
+    <%= cl_image_tag @clown.photo.key %>
+    <%= cl_image_tag @clown.photo.key %>
+  </div>
+ <div class="show-clown-container">
+   <div>
+
+     <p class="clown-paragraphe" ><%= @clown.personal_info %></p>
+
+    </div>
+    <div class="show-clown-form-container">
+      <%= simple_form_for @clown, class:"show-clown-form", id:"toto" do |f| %>
+        <%= f.input :username %>
+        <%= f.input :personal_info %>
+        <%= f.input :price %>
+        <%= f.submit "Reserver", class:"btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
 
 </div>
 
