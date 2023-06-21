@@ -117,21 +117,28 @@ h2{
 }
 
 .card {
-  width: 300px;
+  width: 500px;
   background-color: #fff;
-  border-radius: 28px;
-  padding: 16px;
+  border-radius: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   margin-bottom: 16px;
 }
 
+.card :hover {
+  opacity: 90%;
+}
+
+.card img {
+  border-radius: 16px;
+}
+
 .category_clown :hover{
-  opacity: 50%;
+  opacity: 60%;
 }
 
 .card-title {
-  font-size: 18px;
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -143,4 +150,36 @@ h2{
 .card-link {
   text-decoration: none;
   color: inherit;
+}
+
+.name-cate {
+  width: 50%;
+  margin-top: 10px;
+}
+
+.card-cate {
+  font-size: 12px;
+  color: #7a7a7a;
+  margin-right: 30%;
+}
+
+.card-loca {
+  font-size: 20px;
+  color: #2B2A4C;
+  margin-left: 50%;
+}
+
+.loca-price {
+  width: 50%;
+  margin-top: 10px;
+}
+
+.card-price {
+  font-size: 15px;
+  color:#B31312;
+  margin-left: 50%;
+}
+
+.name-cate-loca-price {
+display: flex;
 }
