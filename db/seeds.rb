@@ -12,9 +12,6 @@ User.destroy_all
 User.create(email: "email@email.com", password: "password")
 User.create(email: "user@email.com", password: "userpassword")
 
-
-file1 = URI.open("https://asset.cloudinary.com/dkx9xgzon/1d393eaf478154cec48eb581cbb9ed87")
-
 puts "yo"
 
 file1 = URI.open("https://res.cloudinary.com/dkx9xgzon/image/upload/v1687274637/WhatsApp_Image_2023-06-20_at_16.19.28_1_cz50ha.jpg")

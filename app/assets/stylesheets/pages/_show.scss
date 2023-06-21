@@ -1,1 +1,29 @@
+.clown-show-title {
+  text-align: left;
+}
 
+.clown-paragraphe {
+  max-width: 60vw;
+}
+
+.show-clown-container {
+display: flex;
+justify-content: space-between;
+margin-top: 4vmin;
+}
+
+.show-clown-form-container {
+  background-color: #EA906C;
+  padding: 4vmin;
+  border-radius: 8px;
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.show-clown-image-container {
+  display: flex;
+  overflow-x: hidden;
+}
