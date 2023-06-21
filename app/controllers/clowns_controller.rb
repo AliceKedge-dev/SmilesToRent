@@ -1,5 +1,4 @@
-class ClownController < ApplicationController
-
+class ClownsController < ApplicationController
   def index
     @clowns = policy_scope(Clown)
   end
@@ -17,17 +16,25 @@ class ClownController < ApplicationController
   end
 
   def show
+    @clown = Clown.find(params["id"])
     authorize @clown
   end
 
   def edit
     authorize @clown
   end
+
   def update
     authorize @clown
   end
 
   def destroy
     authorize @clown
+  end
+
+  private
+
+  def article_params
+    params.require(:clown).permit(:username, :email, :photo, :personnal_info, :password)
   end
 end

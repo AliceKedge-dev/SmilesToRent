@@ -1,0 +1,36 @@
+<div class = "navbar">
+
+<%= image_tag "SmilesForRent.png", class: "clown_logo" %>
+
+<h1 class ="smile_name">SmilesForRent</h1>
+
+<%= form_tag(search_path, method: :get, class: "search-form") do %>
+  <%= text_field_tag(:query, params[:query], placeholder: "Rechercher...") %>
+  <button type="submit" class="search-button">
+    <i class="fa-solid fa-magnifying-glass" style="color: #FFFFFF;"></i>
+  </button>
+<% end %>
+
+</div>
+
+<h2><%= @clown.username %></h2>
+
+<%= cl_image_tag clown.photo.key, height: 200, width: 250, crop: :fill %>
+
+<p>Melissandre, le clown qui illumine ce mariage de sa présence, est une artiste exceptionnelle au charme envoûtant.
+Affublée d'un costume coloré et étincelant, elle incarne à merveille la magie et la joie de l'événement.
+Son visage est habilement maquillé, mélangeant des nuances vives et des motifs ludiques qui accentuent sa personnalité excentrique.
+
+Dès qu'elle entre en scène, Melissandre captive instantanément l'attention de tous les convives.
+Son énergie contagieuse et son sourire radieux illuminent la salle, créant une atmosphère de bonheur partagé.
+Armée de son nez rouge éclatant, elle sème des éclats de rire sur son passage.
+
+Melissandre est une artiste polyvalente qui maîtrise une multitude de talents.
+Elle excelle dans l'art de jongler avec des balles multicolores, des foulards virevoltants et même des cerceaux scintillants.
+Sa dextérité et sa coordination impressionnent à chaque mouvement, tandis que ses cascades virtuoses suscitent l'admiration et l'émerveillement.
+
+Mais Melissandre est bien plus qu'une simple jongleuse.
+Elle se transforme en une mime talentueuse qui utilise des gestes expressifs pour raconter des histoires hilarantes et touchantes sans prononcer un mot.
+Ses mimiques exagérées et son jeu théâtral captivent le public, créant des moments de pure hilarité et d'émotion.</p>
+
+</div>
