@@ -144,3 +144,18 @@ h2{
   text-decoration: none;
   color: inherit;
 }
+
+.create-btn{
+  text-decoration: none;
+  background-color: #B31312;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  height: 42px;
+
+  &:hover {
+    background-color: white;
+    color: #B31312;
+    font-weight: bold;
+  }
+}

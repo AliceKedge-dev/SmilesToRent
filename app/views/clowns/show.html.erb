@@ -17,3 +17,8 @@
 <p><%= @clown.personal_info %></p>
 
 </div>
+
+<%= link_to "Delete",
+  root_path,
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>

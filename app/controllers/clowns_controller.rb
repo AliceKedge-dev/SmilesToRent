@@ -9,10 +9,14 @@ class ClownsController < ApplicationController
   end
 
   def create
-    @clown = Clown.new(params[:clown])
-    @clown.save
+    @clown = Clown.new(params[:clown_params])
     @clown.user = current_user
     authorize @clown
+    if @clown.save
+      redirect_to root_path, notice: "Le clown a été créé avec succès."
+    else
+      render :new
+    end
   end
 
   def show
@@ -29,12 +33,16 @@ class ClownsController < ApplicationController
   end
 
   def destroy
+    @clown = Clown.find(params["id"])
+    @clown.destroy
+    redirect_to root_path, notice: "Le clown a été retiré avec succès."
+
     authorize @clown
   end
 
   private
 
-  def article_params
-    params.require(:clown).permit(:username, :email, :photo, :personnal_info, :password)
+  def clown_params
+    params.require(:clown).permit(:username, :email, :photo, :personnal_info, :password, :price)
   end
 end
