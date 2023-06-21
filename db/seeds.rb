@@ -12,9 +12,13 @@ User.destroy_all
 User.create(email: "email@email.com", password: "password")
 User.create(email: "user@email.com", password: "userpassword")
 
+
+file1 = URI.open("https://asset.cloudinary.com/dkx9xgzon/1d393eaf478154cec48eb581cbb9ed87")
+
 puts "yo"
 
 file1 = URI.open("https://res.cloudinary.com/dkx9xgzon/image/upload/v1687274637/WhatsApp_Image_2023-06-20_at_16.19.28_1_cz50ha.jpg")
+
 clown1 = Clown.new(username: "Melissandre", user: User.last, category: "clown de mariage", localisation: "Paris", price: "40€/h", personal_info: "Melissandre, le clown qui illumine
   ce mariage de sa présence,
   est une artiste exceptionnelle au charme envoûtant. Affublée d'un costume coloré et étincelant, elle incarne à merveille la magie et la joie de l'événement.
@@ -61,5 +65,3 @@ clown3 = Clown.new(username: "Jean Pascal", user: User.last, category: "clown d'
   Et consequuntur consequatur sed nisi autem ea ducimus assumenda ab facilis nesciun.")
 clown3.photo.attach(io: file3, filename: "Jean", content_type: "image/jpg")
 clown3.save
-
-puts "salam"
