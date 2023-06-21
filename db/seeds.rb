@@ -12,7 +12,13 @@ User.destroy_all
 User.create(email: "email@email.com", password: "password")
 User.create(email: "user@email.com", password: "userpassword")
 
+
 file1 = URI.open("https://asset.cloudinary.com/dkx9xgzon/1d393eaf478154cec48eb581cbb9ed87")
+
+puts "yo"
+
+file1 = URI.open("https://res.cloudinary.com/dkx9xgzon/image/upload/v1687274637/WhatsApp_Image_2023-06-20_at_16.19.28_1_cz50ha.jpg")
+
 clown1 = Clown.new(username: "Melissandre", user: User.last, category: "clown de mariage", localisation: "Paris", price: "40€/h", personal_info: "Melissandre, le clown qui illumine
   ce mariage de sa présence,
   est une artiste exceptionnelle au charme envoûtant. Affublée d'un costume coloré et étincelant, elle incarne à merveille la magie et la joie de l'événement.
@@ -27,10 +33,10 @@ clown1 = Clown.new(username: "Melissandre", user: User.last, category: "clown de
   Mais Melissandre est bien plus qu'une simple jongleuse. Elle se transforme en une mime talentueuse qui utilise des gestes expressifs
   pour raconter des histoires hilarantes et touchantes sans prononcer un mot.
   Ses mimiques exagérées et son jeu théâtral captivent le public, créant des moments de pure hilarité et d'émotion.")
-clown1.photo.attach(io: file1, filename: "https://asset.cloudinary.com/dkx9xgzon/e5922ef5c9bab8d0bf083a5509ecf4a4", content_type: "image/png")
+clown1.photo.attach(io: file1, filename: "Melissandre", content_type: "image/jpg")
 clown1.save
 
-file2 = URI.open("https://asset.cloudinary.com/dkx9xgzon/1d393eaf478154cec48eb581cbb9ed87")
+file2 = URI.open("https://res.cloudinary.com/dkx9xgzon/image/upload/v1687274602/WhatsApp_Image_2023-06-20_at_16.19.29_tnizvg.jpg")
 clown2 = Clown.new(username: "Alfred Penier", user: User.last, category: "clown d'anniversaire", localisation: "Avignon", price: "60€/h", personal_info: "Lorem ipsum dolor sit amet.
   Est libero distinctio est dolor perspiciatis
   ex aliquid eligendi. Aut natus amet et natus officiis et vero saepe.
@@ -42,10 +48,10 @@ clown2 = Clown.new(username: "Alfred Penier", user: User.last, category: "clown 
   ex aliquid eligendi. Aut natus amet et natus officiis et vero saepe.
   Ut debitis atque sed corporis error ab voluptatem illum aut galisum culpa qui quia iure sit nostrum illum.
   Et consequuntur consequatur sed nisi autem ea ducimus assumenda ab facilis nesciun.")
-clown2.photo.attach(io: file2, filename: "https://asset.cloudinary.com/dkx9xgzon/b99caf877728216f4f7cba14f03a7beb", content_type: "image/png")
+clown2.photo.attach(io: file2, filename: "Alfred", content_type: "image/jpg")
 clown2.save
 
-file3 = URI.open("https://asset.cloudinary.com/dkx9xgzon/1d393eaf478154cec48eb581cbb9ed87")
+file3 = URI.open("https://res.cloudinary.com/dkx9xgzon/image/upload/v1687274601/WhatsApp_Image_2023-06-20_at_16.19.29_1_wnqwl2.jpg")
 clown3 = Clown.new(username: "Jean Pascal", user: User.last, category: "clown d'hôpital", localisation: "Nice", price: "25€/h", personal_info: "Lorem ipsum dolor sit amet.
   Est libero distinctio est dolor perspiciatis
   ex aliquid eligendi. Aut natus amet et natus officiis et vero saepe.
@@ -57,5 +63,5 @@ clown3 = Clown.new(username: "Jean Pascal", user: User.last, category: "clown d'
   ex aliquid eligendi. Aut natus amet et natus officiis et vero saepe.
   Ut debitis atque sed corporis error ab voluptatem illum aut galisum culpa qui quia iure sit nostrum illum.
   Et consequuntur consequatur sed nisi autem ea ducimus assumenda ab facilis nesciun.")
-clown3.photo.attach(io: file3, filename: "https://asset.cloudinary.com/dkx9xgzon/5dd76c876a059c0295fd491596f96c2a", content_type: "image/png")
+clown3.photo.attach(io: file3, filename: "Jean", content_type: "image/jpg")
 clown3.save
