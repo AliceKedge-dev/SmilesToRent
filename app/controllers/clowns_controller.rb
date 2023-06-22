@@ -35,7 +35,7 @@ class ClownsController < ApplicationController
   def destroy
     @clown = Clown.find(params["id"])
     @clown.destroy
-    redirect_to root_path, notice: "Le clown a été retiré avec succès."
+    redirect_to root_path, notice: "Le clown a été retiré avec succès.", status: :see_other
 
     authorize @clown
   end
@@ -43,6 +43,6 @@ class ClownsController < ApplicationController
   private
 
   def clown_params
-    params.require(:clown).permit(:username, :email, :photo, :personnal_info, :password, :price)
+    params.require(:clown).permit(:username, :email, :personnal_info, :password, :price, photos: [])
   end
 end
