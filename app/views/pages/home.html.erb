@@ -1,8 +1,11 @@
-<div class = "navbar">
-
+<div class = "navbar" >
+<div>
+<%= link_to root_path do %>
 <%= image_tag "SmilesForRent.png", class: "clown_logo" %>
+<% end %>
 
 <h1 class ="smile_name">SmilesForRent</h1>
+</div>
 
 <%= link_to new_clown_path do %>
 <button class="create-btn">create a clown</button>
