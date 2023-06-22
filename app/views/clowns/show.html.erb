@@ -18,7 +18,7 @@
 
 <br>
 
-<div class="container" data-controller="popup">
+<div class="container" data-controller="popup confetti">
   <h2 class="clown-show-title"><%= @clown.username %></h2>
   <h5 class="clown-show-category"><%= @clown.category %></h5>
 
@@ -51,7 +51,6 @@
     <div class="show-clown-form-container">
       <%= simple_form_for @clown, class:"show-clown-form", id:"toto" do |f| %>
         <%= f.input :date, as: :date %>
-
         <label for="heure">Heure</label>
         <select id="heure" name="heure">
           <option value="09:00">09:00</option>
@@ -66,14 +65,16 @@
           <option value="18:00">18:00</option>
         </select>
         <br>
-
         <label for="prix">Prix</label>
         <p><%= @clown.price  %>€/h</p>
         <br>
-        <%= f.submit "Reserver", class:"btn btn-danger" %>
+        <%= f.submit "Reserver", class:"btn-form btn-danger" %>
+        <%# data-action="submit->confetti#pshit" %>
       <% end %>
     </div>
   </div>
+
+  <p class="confetti"></p>
 
 
   <div class="comm">
@@ -101,16 +102,16 @@
 <br>
 <br>
 
-
 </div>
 
 <div class ="footer">
-<div class="card-media">
-	<h1>Suivez-nous !</h1>
-	<ul>
-		<li><a href="https://twitter.com/home" target="_blank"class="logo-socialmedia"><i class="fab fa-twitter"></i></a></li>
-		<li><a href="https://instagram.com" target="_blank" class="logo-socialmedia"><i class="fab fa-instagram"></i></a></li>
-		<li><a href="https://facebook.com" target="_blank" class="logo-socialmedia"><i class="fab fa-facebook-f"></i></a></li>
-		<li><a href="http://linkedin.com/in/gabriel-lauzier-759241184" target="_blank" class="logo-socialmedia"><i class="fab fa-linkedin-in"></i></a></li>
-	</ul>
- </div>
+  <div class="card-media">
+	  <h1>Suivez-nous !</h1>
+	  <ul>
+		  <li><a href="https://twitter.com/home" target="_blank"class="logo-socialmedia"><i class="fab fa-twitter"></i></a></li>
+		  <li><a href="https://instagram.com" target="_blank" class="logo-socialmedia"><i class="fab fa-instagram"></i></a></li>
+		  <li><a href="https://facebook.com" target="_blank" class="logo-socialmedia"><i class="fab fa-facebook-f"></i></a></li>
+		  <li><a href="http://linkedin.com/in/gabriel-lauzier-759241184" target="_blank" class="logo-socialmedia"><i class="fab fa-linkedin-in"></i></a></li>
+	  </ul>
+  </div>
+</div>

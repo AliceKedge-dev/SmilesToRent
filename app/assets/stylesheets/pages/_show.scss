@@ -60,6 +60,45 @@ width: 100%;
   margin-bottom: 10px;
 }
 
+.btn-form{
+  text-decoration: none;
+  background-color: #B31312;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  height: 42px;
+
+  &:hover {
+    background-color: white;
+    color: #B31312;
+    font-weight: bold;
+  }
+}
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: #B31312;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: confetti-fall 2s ease-out;
+}
+
+@keyframes confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 100vh) rotate(360deg);
+  }
+}
+
+
 .show-clown-image-container {
   display: flex;
   overflow-x: hidden;

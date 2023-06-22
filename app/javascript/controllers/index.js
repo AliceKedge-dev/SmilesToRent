@@ -6,5 +6,8 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 import popupController from "./popup_controller"
+import confettiController from "./confetti_controller"
+
 application.register("hello", HelloController)
 application.register("popup", popupController)
+application.register("confetti", confettiController)

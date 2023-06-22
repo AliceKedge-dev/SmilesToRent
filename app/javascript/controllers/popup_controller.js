@@ -12,6 +12,6 @@ export default class extends Controller {
       console.log("clique");
       popup.style.opacity = "1";
       popup.style.pointerEvents = "auto";
-    });
-  };
+  });
+};
 };
