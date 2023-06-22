@@ -1,44 +1,89 @@
 <div class = "navbar">
 
-<%= image_tag "SmilesForRent.png", class: "clown_logo" %>
+  <%= image_tag "SmilesForRent.png", class: "clown_logo" %>
 
-<h1 class ="smile_name">SmilesForRent</h1>
+  <h1 class ="smile_name">SmilesForRent</h1>
 
-<%= form_tag(search_path, method: :get, class: "search-form") do %>
-  <%= text_field_tag(:query, params[:query], placeholder: "Rechercher...") %>
-  <button type="submit" class="search-button">
-    <i class="fa-solid fa-magnifying-glass" style="color: #FFFFFF;"></i>
-  </button>
-<% end %>
+  <%= form_tag(search_path, method: :get, class: "search-form") do %>
+    <%= text_field_tag(:query, params[:query], placeholder: "Rechercher...") %>
+    <button type="submit" class="search-button">
+      <i class="fa-solid fa-magnifying-glass" style="color: #FFFFFF;"></i>
+    </button>
+  <% end %>
 </div>
+<br>
 
 <div class="container">
   <h2 class="clown-show-title"><%= @clown.username %></h2>
+  <h5 class="clown-show-category"><%= @clown.category %></h5>
+  <br>
+
+  <i class="fas fa-heart"></i>
+  <span class="favorite-text">Ajouter au favoris</span>
+  <br>
 
   <div class="show-clown-image-container">
-    <%= cl_image_tag @clown.photo.key %>
-    <%= cl_image_tag @clown.photo.key %>
-    <%= cl_image_tag @clown.photo.key %>
+    <% @clown.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 400, width: 500, crop: :fill %>
+    <% end %>
   </div>
- <div class="show-clown-container">
-   <div>
+  <br>
+  <br>
+  <h3><strong>Description</strong></h3>
 
-     <p class="clown-paragraphe" ><%= @clown.personal_info %></p>
+  <div class="show-clown-container">
+   <p class="clown-paragraphe" ><%= @clown.personal_info %></p>
 
-    </div>
     <div class="show-clown-form-container">
       <%= simple_form_for @clown, class:"show-clown-form", id:"toto" do |f| %>
-        <%= f.input :username %>
-        <%= f.input :personal_info %>
-        <%= f.input :price %>
+        <%= f.input :date, as: :date %>
+        <label for="heure">Heure</label>
+        <select id="heure" name="heure">
+          <option value="09:00">09:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="12:00">12:00</option>
+          <option value="13:00">13:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+          <option value="17:00">17:00</option>
+          <option value="18:00">18:00</option>
+        </select>
+        <br>
+        <%= f.input :price  %>
         <%= f.submit "Reserver", class:"btn btn-danger" %>
       <% end %>
     </div>
+
+    <script>
+      $(document).ready(function() {
+        $('.datepicker').datepicker({
+          format: 'yyyy-mm-dd'
+        });
+      });
+    </script>
   </div>
 
-</div>
+  <div class="comm">
+    <h3><strong>Commentaires / Reviews</strong></h3>
+    <br>
+    <div class="review">
+      <p> Un clown compétent, drôle et discret ! Prêt à surprendre nos invités dans sa magnifique robe blanche <p class="note"><i class="fas fa-star"></i>4,6</p></p>
+    </div>
+    <br>
+    <div class="review">
+      <p> Parfait dans son rôle, conforme à sa description et aux photos.<p class="note"><i class="fas fa-star"></i>5</p></p>
+    </div>
+  </div>
 
-<%= link_to "Delete",
-  root_path,
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
+
+<br>
+<br>
+<br>
+<%= link_to clown_path(@clown),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+<button class="delete-btn">Delete</button>
+<% end %>
+
+</div>
