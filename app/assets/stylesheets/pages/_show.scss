@@ -1,5 +1,9 @@
 .clown-show-title {
-  text-align: left;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 65px;
+  font-family: 'poppins';
 }
 
 .clown-paragraphe {
@@ -13,7 +17,7 @@ margin-top: 4vmin;
 }
 
 .show-clown-form-container {
-  background-color: #EA906C;
+  background-color: #EEE2DE;
   padding: 4vmin;
   border-radius: 8px;
   form {

@@ -9,7 +9,7 @@ class ClownsController < ApplicationController
   end
 
   def create
-    @clown = Clown.new(params[:clown_params])
+    @clown = Clown.new(clown_params)
     @clown.user = current_user
     authorize @clown
     if @clown.save
@@ -43,6 +43,6 @@ class ClownsController < ApplicationController
   private
 
   def clown_params
-    params.require(:clown).permit(:username, :email, :photo, :personnal_info, :password, :price)
+    params.require(:clown).permit(:username, :email, :photo, :personal_info, :password, :price, :category, :localisation)
   end
 end
