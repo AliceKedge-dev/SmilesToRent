@@ -1,25 +1,32 @@
-<div class = "navbar">
+<div class = "navbar" >
+<div>
+<%= link_to root_path do %>
+<%= image_tag "SmilesForRent.png", class: "clown_logo" %>
+<% end %>
 
-  <%= image_tag "SmilesForRent.png", class: "clown_logo" %>
-
-  <h1 class ="smile_name">SmilesForRent</h1>
-
-  <%= form_tag(search_path, method: :get, class: "search-form") do %>
-    <%= text_field_tag(:query, params[:query], placeholder: "Rechercher...") %>
-    <button type="submit" class="search-button">
-      <i class="fa-solid fa-magnifying-glass" style="color: #FFFFFF;"></i>
-    </button>
-  <% end %>
+<h1 class ="smile_name">SmilesForRent</h1>
 </div>
+
+<%= form_tag(search_path, method: :get, class: "search-form") do %>
+  <%= text_field_tag(:query, params[:query], placeholder: "Rechercher...") %>
+  <button type="submit" class="search-button">
+    <i class="fa-solid fa-magnifying-glass" style="color: #FFFFFF;"></i>
+  </button>
+<% end %>
+
+</div>
+
 <br>
 
-<div class="container">
+<div class="container" data-controller="popup">
   <h2 class="clown-show-title"><%= @clown.username %></h2>
   <h5 class="clown-show-category"><%= @clown.category %></h5>
+
   <br>
 
   <i class="fas fa-heart"></i>
   <span class="favorite-text">Ajouter au favoris</span>
+
   <br>
 
   <div class="show-clown-image-container">
@@ -27,8 +34,15 @@
       <%= cl_image_tag photo.key, height: 400, width: 500, crop: :fill %>
     <% end %>
   </div>
+
   <br>
   <br>
+
+  <div class="popup-clown">
+    <h4>Merci d’avoir séléctioné <strong> "<%= @clown.username %>" </strong></h4>
+    <p class="text-popup">un email pour confirmer votre réservation vous à été envoyé.</p>
+  </div>
+
   <h3><strong>Description</strong></h3>
 
   <div class="show-clown-container">
@@ -37,6 +51,7 @@
     <div class="show-clown-form-container">
       <%= simple_form_for @clown, class:"show-clown-form", id:"toto" do |f| %>
         <%= f.input :date, as: :date %>
+
         <label for="heure">Heure</label>
         <select id="heure" name="heure">
           <option value="09:00">09:00</option>
@@ -51,19 +66,15 @@
           <option value="18:00">18:00</option>
         </select>
         <br>
-        <%= f.input :price  %>
+
+        <label for="prix">Prix</label>
+        <p><%= @clown.price  %>€/h</p>
+        <br>
         <%= f.submit "Reserver", class:"btn btn-danger" %>
       <% end %>
     </div>
-
-    <script>
-      $(document).ready(function() {
-        $('.datepicker').datepicker({
-          format: 'yyyy-mm-dd'
-        });
-      });
-    </script>
   </div>
+
 
   <div class="comm">
     <h3><strong>Commentaires / Reviews</strong></h3>
@@ -77,6 +88,22 @@
     </div>
   </div>
 
+<br>
+<br>
+<br>
+
+<%= link_to clown_path(@clown),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+<button class="delete-btn">Delete</button>
+<% end %>
+
+<br>
+<br>
+<br>
+
+
+</div>
+
 <div class ="footer">
 <div class="card-media">
 	<h1>Suivez-nous !</h1>
@@ -87,12 +114,3 @@
 		<li><a href="http://linkedin.com/in/gabriel-lauzier-759241184" target="_blank" class="logo-socialmedia"><i class="fab fa-linkedin-in"></i></a></li>
 	</ul>
  </div>
-<br>
-<br>
-<br>
-<%= link_to clown_path(@clown),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-<button class="delete-btn">Delete</button>
-<% end %>
-
-</div>

@@ -1,10 +1,18 @@
 .clown-show-title {
-  text-align: center;
+  text-align: left;
   margin-top: 20px;
   margin-bottom: 10px;
   font-size: 65px;
-  font-family: 'poppins';
+  font-family: "Poppins", sans-serif;
 }
+
+.smile_name{
+  display: flex;
+  text-align: left;
+  align-items: left;
+  margin-left: 100px;
+}
+
 
 .container {
   width: 90%;
@@ -61,7 +69,6 @@ width: 100%;
 .show-clown-image-container img {
   margin-right: 15px;
 }
-
 
 .comm {
   flex-direction: column;
@@ -136,4 +143,70 @@ h5{
 
 .form-select {
   width: auto;
+}
+
+.card-media {
+	background: white;
+  margin-top: 40px;
+	padding: 24px;
+	border-radius: 6px;
+  width: 100%;
+	text-align: center;
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.card-media h1 {
+  font-family: "Poppins", sans-serif;
+}
+
+.logo-socialmedia{
+	font-size: 64px;
+	margin-right: 60px;
+	margin-left: 60px;
+	color: #2B2A4C ;
+  transition: ease-in 2ms;
+}
+
+.logo-socialmedia :hover{
+	color: #EA906C;
+	transform: 0,5s;
+}
+
+ul{
+	list-style: none;
+	padding-left: 0px;
+	margin-top: 30px;
+}
+
+li {
+	display: inline;
+}
+
+.popup-clown{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #B31312;
+  width: 200px;
+  background-color: #2B2A4C;
+  color: white;
+  text-align: center;
+  width: 350px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.text-popup{
+  background-color: #B31312;
+  border-radius: 15px;
+}
+
+.simple_form p {
+  margin: 0;
+  text-align: center;
 }

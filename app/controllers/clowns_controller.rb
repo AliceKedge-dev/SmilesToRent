@@ -24,14 +24,6 @@ class ClownsController < ApplicationController
     authorize @clown
   end
 
-  def edit
-    authorize @clown
-  end
-
-  def update
-    authorize @clown
-  end
-
   def destroy
     @clown = Clown.find(params["id"])
     @clown.destroy
