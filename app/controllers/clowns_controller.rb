@@ -36,6 +36,5 @@ class ClownsController < ApplicationController
 
   def clown_params
     params.require(:clown).permit(:username, :email, :personal_info, :password, :price, :category, :localisation, photos: [])
-
   end
 end
