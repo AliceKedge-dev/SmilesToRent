@@ -9,6 +9,11 @@
   border-radius: 50%;
 }
 
+h2.home-h2 {
+  font-size: 65px;
+  font-family: "poppins";
+}
+
 .navbar{
   display: flex;
   box-sizing: border-box;
@@ -198,3 +203,40 @@
 .name-cate-loca-price {
   display: flex;
 }
+
+.card-media {
+	background: white;
+  margin-top: 40px;
+	padding: 24px;
+	border-radius: 6px;
+	text-align: center;
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.card-media h1 {
+  font-family: "poppins";
+}
+
+.logo-socialmedia{
+	font-size: 64px;
+	margin-right: 60px;
+	margin-left: 60px;
+	color: #2B2A4C ;
+  transition: ease-in 2ms;
+}
+
+.logo-socialmedia :hover{
+	color: #EA906C;
+	transform: 0,5s;
+}
+
+ul{
+	list-style: none;
+	padding-left: 0px;
+	margin-top: 30px;
+}
+
+li {
+	display: inline;
+}
+
