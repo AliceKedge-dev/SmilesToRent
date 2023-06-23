@@ -5,11 +5,13 @@ class ClownsController < ApplicationController
 
   def new
     @clown = Clown.new
+    authorize @clown
   end
 
   def create
     @clown = Clown.new(clown_params)
     @clown.user = current_user
+    authorize @clown
     if @clown.save
       redirect_to root_path, notice: "Le clown a été créé avec succès."
     else
@@ -19,6 +21,7 @@ class ClownsController < ApplicationController
 
   def show
     @clown = Clown.find(params["id"])
+    @booking = Booking.new
     authorize @clown
   end
 
@@ -26,6 +29,8 @@ class ClownsController < ApplicationController
     @clown = Clown.find(params["id"])
     @clown.destroy
     redirect_to root_path, notice: "Le clown a été retiré avec succès.", status: :see_other
+
+    authorize @clown
   end
 
   private

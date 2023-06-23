@@ -9,7 +9,6 @@
   color : white;
 }
 
-
 .profile-card{
   display: flex;
   width: 453px;
@@ -102,8 +101,9 @@ font-family: Inter;
 
 .container_profile{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
+  margin-top: 20px;
 }
 
 .historique_clown{
