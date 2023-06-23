@@ -1,0 +1,121 @@
+<div class = "navbar" >
+<div>
+<%= link_to root_path do %>
+<%= image_tag "SmilesForRent.png", class: "clown_logo" %>
+<% end %>
+
+<h1 class ="smile_name">SmilesForRent</h1>
+</div>
+
+<%= form_tag(search_path, method: :get, class: "search-form") do %>
+  <%= text_field_tag(:query, params[:query], placeholder: "Rechercher...") %>
+  <button type="submit" class="search-button">
+    <i class="fa-solid fa-magnifying-glass" style="color: #FFFFFF;"></i>
+  </button>
+<% end %>
+
+
+</div>
+
+<h1>My user page</h1>
+
+<div class = "container">
+
+<div class = "row1">
+
+  <div class ="profile-card" >
+
+    <div class = "user_profile_card">
+        <% if current_user %>
+        <% if current_user.photo %>
+          <%= image_tag current_user.photo, class: "pic_profile_card" %>
+      <% else %>
+        <%= image_tag "default.jpg", class: "pic_profile_card" %>
+      <% end %>
+        <h3 class="profile_name"><%= current_user.username %></h3>
+      <% end %>
+    </div>
+
+      <div class ="infos_profile_card">
+        <p class = "avis"> 30 avis</p>
+        <p>----------</p>
+        <p class = "clown"> 8 clowns</p>
+      </div>
+  </div>
+
+  <div class = "user_info_page">
+    <h1>A propos</h1>
+      <div class = "infos-haut">
+        <p> Localisation</p>
+        <p> e-mail</p>
+        <p> billing</p>
+      </div>
+      <div class = "infos-bas">
+        <p> address</p>
+        <p> infos</p>
+        <p> career</p>
+      </div>
+  </div>
+</div>
+
+  <div class = "row2">
+
+    <div class = "historique">
+
+      <h1>Mon historique</h1>
+
+      <div class="clowns-historique-cards">
+
+        <div class = "historique_clown">
+          <%= image_tag "diner_clown.jpg", class: "clown_pic" %>
+          <p class ="clown-name">clown_name</p>
+        </div>
+
+        <div class = "historique_clown">
+          <%= image_tag "wedding.jpg", class: "clown_pic" %>
+          <p class ="clown-name">clown_name</p>
+        </div>
+
+        <div class = "historique_clown">
+          <%= image_tag "conférence.jpg", class: "clown_pic" %>
+          <p class ="clown-name">clown_name</p>
+        </div>
+
+    </div>
+
+    <div class="clowns-historique-cards">
+        <div class = "historique_clown">
+          <%= image_tag "wedding.jpg", class: "clown_pic" %>
+          <p class ="clown-name">clown_name</p>
+        </div>
+
+        <div class = "historique_clown">
+          <%= image_tag "birthday.jpg", class: "clown_pic" %>
+          <p class ="clown-name">clown_name</p>
+          <p></p>
+        </div>
+
+        <div class = "historique_clown">
+          <%= image_tag "moi.jpg", class: "clown_pic" %>
+          <p class ="clown-name">clown_name</p>
+          <p></p>
+        </div>
+    </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class ="footer">
+<div class="card-media">
+	<h1>Suivez-nous !</h1>
+	<ul>
+		<li><a href="https://twitter.com/home" target="_blank"class="logo-socialmedia"><i class="fab fa-twitter"></i></a></li>
+		<li><a href="https://instagram.com" target="_blank" class="logo-socialmedia"><i class="fab fa-instagram"></i></a></li>
+		<li><a href="https://facebook.com" target="_blank" class="logo-socialmedia"><i class="fab fa-facebook-f"></i></a></li>
+		<li><a href="http://linkedin.com/in/gabriel-lauzier-759241184" target="_blank" class="logo-socialmedia"><i class="fab fa-linkedin-in"></i></a></li>
+	</ul>
+ </div>
+</div>

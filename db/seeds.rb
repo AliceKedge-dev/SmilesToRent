@@ -9,10 +9,24 @@ require "open-uri"
 Clown.destroy_all
 User.destroy_all
 
-User.create(email: "email@email.com", password: "password")
-User.create(email: "user@email.com", password: "userpassword")
+puts "creating users"
 
-puts "yo"
+fileuser1 = URI.open("https://res.cloudinary.com/dkx9xgzon/image/upload/v1687517339/306768251_6135640036449583_9165078493045947229_n_lx5p7s.jpg")
+user1 = User.create(email: "gaspard@email.com", password: "password", username: "gaspacho")
+user1.photo.attach(io: fileuser1, filename: "gaspard", content_type: "image/png")
+user1.save
+
+fileuser2 = URI.open("https://res.cloudinary.com/dkx9xgzon/image/upload/v1687517379/184389336_606463140447182_2517201873288020321_n_dwicwa.jpg")
+user2 = User.create(email: "alice@email.com", password: "password",  username: "aliche")
+user2.photo.attach(io: fileuser2, filename: "alice", content_type: "image/png")
+user2.save
+
+fileuser3 = URI.open("https://res.cloudinary.com/dkx9xgzon/image/upload/v1687517423/312264256_1204942473459118_8230975456803184129_n_lx6pxd.jpg")
+user3 = User.create(email: "gabriel@email.com", password: "password",  username: "gabrielo")
+user3.photo.attach(io: fileuser3, filename: "gabriel", content_type: "image/png")
+user3.save
+
+puts "creating clowns"
 
 file1 = URI.open("https://res.cloudinary.com/dkx9xgzon/image/upload/v1687274637/WhatsApp_Image_2023-06-20_at_16.19.28_1_cz50ha.jpg")
 file2 = URI.open("https://res.cloudinary.com/dkx9xgzon/image/upload/v1687425903/1000_F_219407364_iC4y9fPCTJmRBKjEa5gKydF0fAKuoUxM_hjyirq.jpg")
@@ -79,3 +93,6 @@ clown3 = Clown.new(username: "Jean Pascal", user: User.last, category: "clown d'
     {io: file9, filename: "Jean", content_type: "image/jpg"}
   ])
 clown3.save
+
+
+puts "salam"

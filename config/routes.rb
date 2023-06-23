@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :clowns
   get "search", to: "search#search"
+  get "profile", to: "pages#profile"
 end
