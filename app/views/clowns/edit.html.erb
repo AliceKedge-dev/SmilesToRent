@@ -1,0 +1,9 @@
+<%= simple_form_for @clown, class: "clown-form" do |f| %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.input :username, label: "Nom du clown" %>
+  <%= f.input :personal_info, label: "Informations du clown" %>
+  <%= f.input :category, label: "Catégorie du clown" %>
+  <%= f.input :localisation, label: "Localisation du clown" %>
+  <%= f.input :price, label: "Prix par heure" %>
+  <%= f.button :submit, "Modifier le clown", class: "blue-button" %>
+<% end %>
