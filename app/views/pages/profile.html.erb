@@ -1,10 +1,10 @@
 <div class = "navbar" >
-<div>
-<%= link_to root_path do %>
-<%= image_tag "SmilesForRent.png", class: "clown_logo" %>
-<% end %>
+  <div>
+  <%= link_to root_path do %>
+  <%= image_tag "SmilesForRent.png", class: "clown_logo" %>
+  <% end %>
 
-<h1 class ="smile_name">SmilesForRent</h1>
+  <h1 class ="smile_name">SmilesForRent</h1>
 </div>
 
 <%= form_tag(search_path, method: :get, class: "search-form") do %>
@@ -16,8 +16,6 @@
 
 
 </div>
-
-<h1>My user page</h1>
 
 <div class = "container_profile">
 
@@ -48,12 +46,12 @@
       <div class = "infos-haut">
         <p> Localisation</p>
         <p> e-mail</p>
-        <p> billing</p>
+        <p> Billing</p>
       </div>
       <div class = "infos-bas">
-        <p> address</p>
-        <p> infos</p>
-        <p> career</p>
+        <p> Address</p>
+        <p> Infos</p>
+        <p> Career</p>
       </div>
   </div>
 </div>
@@ -65,41 +63,14 @@
       <h1>Mon historique</h1>
 
       <div class="clowns-historique-cards">
+        <% current_user.bookings.each do |booking| %>
+          <div class="booked_clown">
+            <%= image_tag booking.clown.photos.first, class: "clown_pic" %>
+            <p class="clown"><%= booking.clown.username %></p>
+          </div>
+        <% end %>
+      </div>
 
-        <div class = "historique_clown">
-          <%= image_tag "diner_clown.jpg", class: "clown_pic" %>
-          <p class ="clown-name">clown_name</p>
-        </div>
-
-        <div class = "historique_clown">
-          <%= image_tag "wedding.jpg", class: "clown_pic" %>
-          <p class ="clown-name">clown_name</p>
-        </div>
-
-        <div class = "historique_clown">
-          <%= image_tag "conférence.jpg", class: "clown_pic" %>
-          <p class ="clown-name">clown_name</p>
-        </div>
-
-    </div>
-
-    <div class="clowns-historique-cards">
-        <div class = "historique_clown">
-          <%= image_tag "wedding.jpg", class: "clown_pic" %>
-          <p class ="clown-name">clown_name</p>
-        </div>
-
-        <div class = "historique_clown">
-          <%= image_tag "birthday.jpg", class: "clown_pic" %>
-          <p class ="clown-name">clown_name</p>
-          <p></p>
-        </div>
-
-        <div class = "historique_clown">
-          <%= image_tag "moi.jpg", class: "clown_pic" %>
-          <p class ="clown-name">clown_name</p>
-          <p></p>
-        </div>
     </div>
 
     </div>

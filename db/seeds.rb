@@ -94,5 +94,4 @@ clown3 = Clown.new(username: "Jean Pascal", user: User.last, category: "clown d'
   ])
 clown3.save
 
-
 puts "salam"
