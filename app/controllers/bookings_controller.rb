@@ -29,7 +29,6 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params["id"])
     @booking.destroy
     redirect_to root_path, notice: "Le booking a été retiré avec succès.", status: :see_other
-
     authorize @booking
   end
 

@@ -65,6 +65,7 @@
       <div class="clowns-historique-cards">
         <% current_user.bookings.each do |booking| %>
           <div class="booked_clown">
+          <br>
             <%= image_tag booking.clown.photos.first, class: "clown_pic" %>
             <p class="clown"><%= booking.clown.username %></p>
           </div>
