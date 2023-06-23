@@ -29,7 +29,6 @@ class ClownsController < ApplicationController
     @clown = Clown.find(params["id"])
     @clown.destroy
     redirect_to root_path, notice: "Le clown a été retiré avec succès.", status: :see_other
-
     authorize @clown
   end
 
