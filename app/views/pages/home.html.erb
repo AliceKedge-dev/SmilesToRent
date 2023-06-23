@@ -19,6 +19,18 @@
   </button>
 <% end %>
 
+<%= link_to profile_path do %>
+<div class = "user_profile_card">
+        <% if current_user %>
+        <% if current_user.photo %>
+          <%= image_tag current_user.photo, class: "profile_pic" %>
+      <% else %>
+        <%= image_tag "default.jpg", class: "profile_pic" %>
+      <% end %>
+      <% end %>
+    </div>
+<% end %>
+
 </div>
 
 <br>

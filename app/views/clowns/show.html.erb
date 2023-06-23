@@ -49,27 +49,11 @@
    <p class="clown-paragraphe" ><%= @clown.personal_info %></p>
 
     <div class="show-clown-form-container">
-      <%= simple_form_for @clown, class:"show-clown-form", id:"toto" do |f| %>
-        <%= f.input :date, as: :date %>
-        <label for="heure">Heure</label>
-        <select id="heure" name="heure">
-          <option value="09:00">09:00</option>
-          <option value="10:00">10:00</option>
-          <option value="11:00">11:00</option>
-          <option value="12:00">12:00</option>
-          <option value="13:00">13:00</option>
-          <option value="14:00">14:00</option>
-          <option value="15:00">15:00</option>
-          <option value="16:00">16:00</option>
-          <option value="17:00">17:00</option>
-          <option value="18:00">18:00</option>
-        </select>
-        <br>
-        <label for="prix">Prix</label>
-        <p><%= @clown.price  %>€/h</p>
-        <br>
-        <%= f.submit "Reserver", class:"btn-form btn-danger" %>
-        <%# data-action="submit->confetti#pshit" %>
+      <%= simple_form_for [@clown, @booking], class:"show-clown-form", id:"toto" do |f| %>
+        <%= f.input :start_date, as: :date %>
+        <%= f.input :end_date, as: :date %>
+        <p><%= @clown.price %>€/h</p>
+        <%= f.submit "Je réserve", class:"btn-form btn-danger" %>
       <% end %>
     </div>
   </div>

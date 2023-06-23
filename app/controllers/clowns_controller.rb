@@ -21,6 +21,7 @@ class ClownsController < ApplicationController
 
   def show
     @clown = Clown.find(params["id"])
+    @booking = Booking.new
     authorize @clown
   end
 
