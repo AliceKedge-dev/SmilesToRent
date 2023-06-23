@@ -32,6 +32,18 @@ class ClownsController < ApplicationController
     authorize @clown
   end
 
+  def edit
+    @clown = Clown.find(params[:id])
+    authorize @clown
+  end
+
+  def update
+    @clown = Clown.find(params[:id])
+    @clown.update(clown_params)
+    redirect_to clown_path(@clown)
+    authorize @clown
+  end
+
   private
 
   def clown_params
